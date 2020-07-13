@@ -1,7 +1,7 @@
 $(function(){
   'use strict';
 
-  toastr.info('Welcome!', 'Agent Portal', {
+  toastr.info('Welcome!', 'Customer', {
     closeButton: true,
     progressBar: true,
   });
