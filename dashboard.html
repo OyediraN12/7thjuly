@@ -27,7 +27,7 @@
 </head>
 
 
-<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden" onload="disableSubmit()">
   <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button">
       <span class="navbar-toggler-icon"></span>
@@ -265,8 +265,11 @@
                           <textarea name="Note" class="form-control" id="note" name="note" cols="30"
                             rows="2"></textarea>
                         </div>
+                        <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"> I Agree
+                                Terms & Coditions
+                                <br><br>
                     </div>
-                    <button type="submit" class="btn btn-primary"
+                    <button type="submit" id="submit" class="btn btn-primary"
                       style="background-color:#28A8FF; font-size: 18px; width: 130px;">Submit</button>
                     </form>
                   </div>
@@ -301,6 +304,21 @@
 
   <!-- Custom scripts required by this view -->
   <script src="js/views/main.js"></script>
+  <script>
+    function disableSubmit() {
+        document.getElementById("submit").disabled = true;
+    }
+
+    function activateButton(element) {
+
+        if (element.checked) {
+            document.getElementById("submit").disabled = false;
+        } else {
+            document.getElementById("submit").disabled = true;
+        }
+
+    }
+</script>
 
 </body>
 
